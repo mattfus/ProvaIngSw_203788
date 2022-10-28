@@ -10,12 +10,14 @@ public class App
     {
         FunnyAlgorithms fa = new FunnyAlgorithms();
         
-        //System.out.println(fa.stringToIntConverter("123"));
+        System.out.println(fa.stringToIntConverter("123"));
         
         int[] array = {8,5,1,2,4,6};
         int target = 6;
         
-       // System.out.println(fa.binarySearch(array, target));
+        System.out.println(fa.binarySearch(array, target));
+        
+        fa.swap(array, 0, 10);
         
         fa.selectionSort(array, 1);
         for(int e : array) {

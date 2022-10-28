@@ -70,8 +70,15 @@ public class FunnyAlgorithmsTest {
 	//TEST SWAP
 	@SuppressWarnings("static-access")
 	@Test(expected = NullPointerException.class)
-	public void swapDoesntWork() {
+	public void swapThrowsNullPointer() {
 		fa.swap(null, 3, 4);
+	}
+	
+	@SuppressWarnings("static-access")
+	@Test(expected = ArrayIndexOutOfBoundsException.class)
+	public void swapThrowsArrayIndexOut() {
+		int[] array = {1,3,4,5};
+		fa.swap(array, 0, 10);
 	}
 	
 	//TEST SELECTION SORT
