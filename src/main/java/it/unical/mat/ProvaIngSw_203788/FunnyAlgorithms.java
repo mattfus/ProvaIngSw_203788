@@ -70,7 +70,7 @@ public class FunnyAlgorithms {
 	 */
 	public int stringToIntConverter(String number) {
 		Integer num = null;
-		if((number.matches("([0-9]+)") || number.matches("-[0-9]+")) && number.length() >= 1) {
+		if((number.matches("([0-9]+)") || number.matches("-[0-9]+")) && number.length() >= 1 && number != null) {
 			if(Integer.parseInt(number) >= -32768 && Integer.parseInt(number) <= 32767) {
 				num = Integer.parseInt(number);
 			}

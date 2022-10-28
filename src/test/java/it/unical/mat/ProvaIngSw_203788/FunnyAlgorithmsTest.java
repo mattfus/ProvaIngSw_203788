@@ -2,6 +2,7 @@ package it.unical.mat.ProvaIngSw_203788;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -13,6 +14,7 @@ public class FunnyAlgorithmsTest {
 	
 	@Before
 	public void before() {
+		//inizializzo FunnyAlgorithms
 		fa = new FunnyAlgorithms();
 	}
 	
@@ -38,5 +40,20 @@ public class FunnyAlgorithmsTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void stringToIntConverterRangeException() {
 		fa.stringToIntConverter("-32769");
+	}
+	
+	//TEST BINARY SEARCH
+	@Test
+	public void binarySearchWorksFine() {
+		int[] array = {1,3,5,6};
+		int target = 3;
+		
+		assertEquals(3, fa.binarySearch(array, target));
+	}
+	
+	@AfterClass
+	public void afterAllTests() {
+		//stop time with joda time
+		System.out.println("Test terminati");
 	}
 }
