@@ -2,6 +2,7 @@ package it.unical.mat.ProvaIngSw_203788;
 
 import static org.junit.Assert.assertEquals;
 
+import org.joda.time.JodaTimePermission;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -20,7 +21,7 @@ public class FunnyAlgorithmsTest {
 	
 	@BeforeClass
 	public static void beforeClass() {
-		//take time with joda time
+		System.out.println();
 	}
 	
 			//TEST STRINGTOINTCONVERTER
