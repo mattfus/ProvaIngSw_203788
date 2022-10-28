@@ -17,11 +17,14 @@ public class App
         
         System.out.println(fa.binarySearch(array, target));
         
-        fa.swap(array, 0, 10);
-        
-        fa.selectionSort(array, 1);
-        for(int e : array) {
-        	System.out.println(e);
-        }
+		int[] array2 = {5,2,3,9,6};
+		int order = 1;
+		
+		fa.selectionSort(array2, order);
+		for(int e : array2) {
+			System.out.println(e);
+		}
+		
+		
     }
 }

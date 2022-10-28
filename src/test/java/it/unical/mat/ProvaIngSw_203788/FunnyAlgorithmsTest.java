@@ -1,8 +1,9 @@
 package it.unical.mat.ProvaIngSw_203788;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
-import org.joda.time.JodaTimePermission;
+import org.joda.time.DateTime;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -21,7 +22,8 @@ public class FunnyAlgorithmsTest {
 	
 	@BeforeClass
 	public static void beforeClass() {
-		System.out.println();
+		DateTime dt = new DateTime();
+		System.out.println("Test iniziati " + dt.getHourOfDay()+":"+dt.getMinuteOfHour());
 	}
 	
 			//TEST STRINGTOINTCONVERTER
@@ -90,7 +92,7 @@ public class FunnyAlgorithmsTest {
 		
 		int[] expected = {2,3,5,6,9};
 		
-		assertEquals(expected, fa.selectionSort(array, 0));
+		assertArrayEquals(expected, fa.selectionSort(array, order));
 	}
 	
 	@Test
@@ -100,7 +102,7 @@ public class FunnyAlgorithmsTest {
 		
 		int[] expected = {9,6,5,3,2};
 		
-		assertEquals(expected, fa.selectionSort(array, order));
+		assertArrayEquals(expected, fa.selectionSort(array, order));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
@@ -121,6 +123,7 @@ public class FunnyAlgorithmsTest {
 	@AfterClass
 	public static void afterAllTests() {
 		//stop time with joda time
-		System.out.println("Test terminati");
+		DateTime dt = new DateTime();
+		System.out.println("Test terminati " + dt.getHourOfDay()+":"+dt.getMinuteOfHour());
 	}
 }
