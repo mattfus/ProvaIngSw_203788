@@ -31,8 +31,12 @@ public class FunnyAlgorithmsTest {
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void stringToIntConverterThrowsException() {
+	public void stringToIntConverterThrowsIllegalArgumentException() {
 		fa.stringToIntConverter("banana33");
 	}
 	
+	@Test(expected = IllegalArgumentException.class)
+	public void stringToIntConverterRangeException() {
+		fa.stringToIntConverter("-32769");
+	}
 }
