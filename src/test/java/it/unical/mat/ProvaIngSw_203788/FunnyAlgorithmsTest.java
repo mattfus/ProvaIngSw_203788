@@ -19,7 +19,7 @@ public class FunnyAlgorithmsTest {
 	}
 	
 	@BeforeClass
-	public void beforeClass() {
+	public static void beforeClass() {
 		//take time with joda time
 	}
 	
@@ -49,7 +49,7 @@ public class FunnyAlgorithmsTest {
 		int[] array = {1,3,5,6};
 		int target = 3;
 		
-		assertEquals(3, fa.binarySearch(array, target));
+		assertEquals(1, fa.binarySearch(array, target));
 	}
 	
 	@Test
@@ -74,11 +74,44 @@ public class FunnyAlgorithmsTest {
 		fa.swap(null, 3, 4);
 	}
 	
-	
 	//TEST SELECTION SORT
+	@Test
+	public void selectionSortCrescenteWorksFine() {
+		int[] array = {5,2,3,9,6};
+		int order = 1;
+		
+		int[] expected = {2,3,5,6,9};
+		
+		assertEquals(expected, fa.selectionSort(array, 0));
+	}
+	
+	@Test
+	public void selectionSortDecrescenteWorksFine() {
+		int[] array = {5,2,3,9,6};
+		int order = 0;
+		
+		int[] expected = {9,6,5,3,2};
+		
+		assertEquals(expected, fa.selectionSort(array, order));
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void selectionSortThrowsIllegalArgument() {
+		int[] array = {1,5,3,8};
+		int order = 2;
+		fa.selectionSort(array, order);
+	}
+	
+	@Test(expected = NullPointerException.class)
+	public void selectionSortThrowsNullPointer() {
+		int[] array = null;
+		int order = 1;
+		fa.selectionSort(array, order);
+	}
+	
 	
 	@AfterClass
-	public void afterAllTests() {
+	public static void afterAllTests() {
 		//stop time with joda time
 		System.out.println("Test terminati");
 	}

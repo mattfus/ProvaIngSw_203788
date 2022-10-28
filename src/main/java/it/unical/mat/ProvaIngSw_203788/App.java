@@ -10,8 +10,16 @@ public class App
     {
         FunnyAlgorithms fa = new FunnyAlgorithms();
         
-        System.out.println(fa.stringToIntConverter("123"));
+        //System.out.println(fa.stringToIntConverter("123"));
         
-        fa.swap(null, 3, 4);
+        int[] array = {8,5,1,2,4,6};
+        int target = 6;
+        
+       // System.out.println(fa.binarySearch(array, target));
+        
+        fa.selectionSort(array, 1);
+        for(int e : array) {
+        	System.out.println(e);
+        }
     }
 }
