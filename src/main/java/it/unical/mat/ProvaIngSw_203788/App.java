@@ -8,6 +8,8 @@ public class App
 {
     public static void main( String[] args )
     {
+        FunnyAlgorithms fa = new FunnyAlgorithms();
         
+        System.out.println(fa.stringToIntConverter(""));
     }
 }

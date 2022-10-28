@@ -70,9 +70,12 @@ public class FunnyAlgorithms {
 	 */
 	public int stringToIntConverter(String number) {
 		Integer num = null;
-		if(number.matches("[0-9]+") && number.length() >= 1) {
+		if((number.matches("([0-9]+)") || number.matches("-[0-9]+")) && number.length() >= 1) {
 			if(Integer.parseInt(number) >= -32768 && Integer.parseInt(number) <= 32767) {
 				num = Integer.parseInt(number);
+			}
+			else {
+				throw new IllegalArgumentException("La stringa è troppo piccola o grande [-32768,32767]");
 			}
 		}
 		else {
