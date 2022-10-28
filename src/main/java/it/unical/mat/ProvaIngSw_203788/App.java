@@ -10,6 +10,8 @@ public class App
     {
         FunnyAlgorithms fa = new FunnyAlgorithms();
         
-        System.out.println(fa.stringToIntConverter(""));
+        System.out.println(fa.stringToIntConverter("123"));
+        
+        fa.swap(null, 3, 4);
     }
 }

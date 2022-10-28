@@ -23,6 +23,7 @@ public class FunnyAlgorithmsTest {
 		//take time with joda time
 	}
 	
+			//TEST STRINGTOINTCONVERTER
 	@Test
 	public void stringToIntConverterWorksFine() {
 		assertEquals(1, fa.stringToIntConverter("1"));
@@ -42,7 +43,7 @@ public class FunnyAlgorithmsTest {
 		fa.stringToIntConverter("-32769");
 	}
 	
-	//TEST BINARY SEARCH
+			//TEST BINARY SEARCH
 	@Test
 	public void binarySearchWorksFine() {
 		int[] array = {1,3,5,6};
@@ -50,6 +51,31 @@ public class FunnyAlgorithmsTest {
 		
 		assertEquals(3, fa.binarySearch(array, target));
 	}
+	
+	@Test
+	public void binarySearchShouldFail() {
+		int[] array = {1,3,5,6};
+		int target = 9;
+		
+		assertEquals(-1, fa.binarySearch(array, target));
+	}
+	
+	@Test(expected = NullPointerException.class)
+	public void binarySearchThrowsException() {
+		int target = 9;
+		int[] array = null;
+		fa.binarySearch(array, target);
+	}
+	
+	//TEST SWAP
+	@SuppressWarnings("static-access")
+	@Test(expected = NullPointerException.class)
+	public void swapDoesntWork() {
+		fa.swap(null, 3, 4);
+	}
+	
+	
+	//TEST SELECTION SORT
 	
 	@AfterClass
 	public void afterAllTests() {
