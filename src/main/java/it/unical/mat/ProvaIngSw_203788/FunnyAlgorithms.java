@@ -68,8 +68,19 @@ public class FunnyAlgorithms {
 	 * @return
 	 * @throws UnsupportedOperationException
 	 */
-	public int stringToIntConverter(String number) throws UnsupportedOperationException {
-		throw new UnsupportedOperationException("To be implemented");
+	public int stringToIntConverter(String number) {
+		Integer num = null;
+		if(number.matches("[0-9]+") && number.length() >= 1) {
+			if(Integer.parseInt(number) >= -32768 && Integer.parseInt(number) <= 32767) {
+				num = Integer.parseInt(number);
+			}
+		}
+		else {
+			throw new IllegalArgumentException("La stringa non contiene solo numeri");
+		}
+		
+		return num;
+
 	}
 
 }
